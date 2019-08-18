@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Artilce List</h1>
+    <div class="articles">
+        {% for article in articles %}
+            <div class="article">
+                <h2 class="title"><a href="{% url 'articles:article_detail' slug=article.slug %}">{{ article.title }}</a></h2>
+                <p class="snippet">{{ article.snippet }}</p>
+                <p class="created">Added on: {{ article.created }}</p>
+                <p class="modified">Last modified: {{ article.modified }}</p>
+                <p class="author">Added by {{ article.author }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

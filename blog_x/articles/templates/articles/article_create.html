@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="create-article">
+        <h2>Create an Article</h2>
+        <form class="blog_x-form" action="{% url 'articles:article_create'%}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Add article">
+        </form> 
+        <form class="blog_x-form" action="{% url 'article:article_list'}" method="get">
+            <input type="submit" value="Cancel">
+        </form>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/slugify.js"></script>
+{% endblock %}

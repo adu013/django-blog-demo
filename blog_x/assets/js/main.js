@@ -1,0 +1,1 @@
+document.getElementsByTagName("input")[name='slug'].readOnly = true;
